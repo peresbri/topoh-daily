@@ -12,7 +12,8 @@ export class SubscribeForm extends React.Component<IProps, IState> {
         <p>
           Enter your email to get daily <span>topoh</span>
         </p>
-        <Input size="large" value="test" placeholder="tina@topoh.cm" />
+        <Input size="large" value="Joe Doe" placeholder="Joe Doe" />
+        <Input size="large" value="tina@topoh.cm" placeholder="tina@topoh.cm" />
       </div>
     );
   }
