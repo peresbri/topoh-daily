@@ -40,7 +40,14 @@ export class SubscribeForm extends React.Component<IProps, IState> {
     const { name, email } = this.state;
 
     // TODO validation BMM
-    // const errors = Object.keys(this.state).reduce()
+    const errors = Object.keys(this.state).reduce((acc: any, key: string) => {
+      // @ts-ignore
+      if (this.state[key]) {
+        acc[key] = `error with the ${key} field`;
+      }
+
+      return acc;
+    }, {})
 
     alert(`subscribing: ${name} ${email}`);
   };
