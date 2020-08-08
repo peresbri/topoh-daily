@@ -10,32 +10,71 @@ interface IState {
 
 function makeState(state?: IState): IState {
   if (!!state) {
-    return {...state};
+    return { ...state };
   }
-  
+
   return {
-    name: 'Joe Doe',
-    email: 'tina@topoh.cm'
-  }
+    name: "",
+    email: "",
+  };
 }
 
 export class SubscribeForm extends React.Component<IProps, IState> {
-
   constructor(public props: IProps, public state: IState) {
     super(props);
-
     this.state = makeState();
   }
 
+  handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    if (Object.keys(this.state).includes(name)) {
+      const updatedState = Object.assign({}, this.state, {
+        [name]: value,
+      });
+      this.setState(updatedState);
+    }
+  };
+
+  handleSubscribe = () => {
+    const { name, email } = this.state;
+
+    // TODO validation BMM
+    // const errors = Object.keys(this.state).reduce()
+
+    alert(`subscribing: ${name} ${email}`);
+  };
+
   render() {
+    const { name, email } = this.state;
+
     return (
       <div>
         <p>
           Enter your email to get daily <span>topoh</span>
         </p>
-        <Input size="large" value={this.state.name} placeholder="Joe Doe" />
-        <Input size="large" value={this.state.email} placeholder="tina@topoh.cm" />
-        <Button size="large" block={true} type="primary">Subscribe</Button>
+        <Input
+          name="name"
+          size="large"
+          onChange={this.handleInputChange}
+          value={name}
+          placeholder="Joe Doe"
+        />
+        <Input
+          name="email"
+          size="large"
+          onChange={this.handleInputChange}
+          value={email}
+          placeholder="tina@topoh.cm"
+        />
+        <Button
+          size="large"
+          block={true}
+          type="primary"
+          onClick={this.handleSubscribe}
+        >
+          Subscribe
+        </Button>
       </div>
     );
   }
