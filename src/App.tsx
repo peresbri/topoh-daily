@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+import logo from "./topoh-logo.jpg";
 import "./App.css";
 import { SubscribeForm } from "./SubscribeForm";
 
