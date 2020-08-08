@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "antd";
+import { Input, Button } from "antd";
 
 interface IProps {}
 
@@ -14,6 +14,7 @@ export class SubscribeForm extends React.Component<IProps, IState> {
         </p>
         <Input size="large" value="Joe Doe" placeholder="Joe Doe" />
         <Input size="large" value="tina@topoh.cm" placeholder="tina@topoh.cm" />
+        <Button type="primary">Subscribe</Button>
       </div>
     );
   }
