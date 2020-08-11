@@ -1,0 +1,20 @@
+<article>
+  <section>
+
+    <h2>
+      Signup here to get daily Topoh
+    </h2>
+
+    <form [formGroup]="subscribeForm" class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Please enter your name</mat-label>
+        <input formControlName="nameField" type="text" matInput placeholder="John Doe">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Please enter your email</mat-label>
+        <input formControlName="emailField" type="email" matInput placeholder="tina@topoh.cm">
+      </mat-form-field>
+    </form>
+    <button [disabled]="!subscribeForm.valid" (click)="handleSubscribeData()" mat-raised-button>Subscribe</button>
+  </section>
+</article>
