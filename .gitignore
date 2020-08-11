@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/react-fe/node_modules
+/angular-fe/node_modules
 /.pnp
 .pnp.js
 
